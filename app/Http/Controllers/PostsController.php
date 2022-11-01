@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePost;
 use App\Models\BlogPost;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
@@ -31,7 +31,7 @@ class PostsController extends Controller
         // dd(DB::getQueryLog());
 
         //comments_count
-        return view('posts.index', ['posts' => BlogPost::withCount('comments')->get()]);
+        return view('posts.index', ['posts' => BlogPost::All()]);
     }
 
     /**
