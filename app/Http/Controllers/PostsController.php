@@ -31,7 +31,7 @@ class PostsController extends Controller
         // dd(DB::getQueryLog());
 
         //comments_count
-        return view('posts.index', ['posts' => BlogPost::All()]);
+        return view('posts.index', ['posts' => BlogPost::withCount('comments')->get()]);
     }
 
     /**
